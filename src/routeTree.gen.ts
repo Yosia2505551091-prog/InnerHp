@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as StatsRouteImport } from './routes/stats'
 import { Route as QuestsRouteImport } from './routes/quests'
+import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as CheckinRouteImport } from './routes/checkin'
@@ -24,6 +25,11 @@ const StatsRoute = StatsRouteImport.update({
 const QuestsRoute = QuestsRouteImport.update({
   id: '/quests',
   path: '/quests',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OnboardingRoute = OnboardingRouteImport.update({
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/checkin': typeof CheckinRoute
   '/home': typeof HomeRoute
   '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
   '/quests': typeof QuestsRoute
   '/stats': typeof StatsRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/checkin': typeof CheckinRoute
   '/home': typeof HomeRoute
   '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
   '/quests': typeof QuestsRoute
   '/stats': typeof StatsRoute
 }
@@ -69,20 +77,36 @@ export interface FileRoutesById {
   '/checkin': typeof CheckinRoute
   '/home': typeof HomeRoute
   '/onboarding': typeof OnboardingRoute
+  '/profile': typeof ProfileRoute
   '/quests': typeof QuestsRoute
   '/stats': typeof StatsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/checkin' | '/home' | '/onboarding' | '/quests' | '/stats'
+  fullPaths:
+    | '/'
+    | '/checkin'
+    | '/home'
+    | '/onboarding'
+    | '/profile'
+    | '/quests'
+    | '/stats'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/checkin' | '/home' | '/onboarding' | '/quests' | '/stats'
+  to:
+    | '/'
+    | '/checkin'
+    | '/home'
+    | '/onboarding'
+    | '/profile'
+    | '/quests'
+    | '/stats'
   id:
     | '__root__'
     | '/'
     | '/checkin'
     | '/home'
     | '/onboarding'
+    | '/profile'
     | '/quests'
     | '/stats'
   fileRoutesById: FileRoutesById
@@ -92,6 +116,7 @@ export interface RootRouteChildren {
   CheckinRoute: typeof CheckinRoute
   HomeRoute: typeof HomeRoute
   OnboardingRoute: typeof OnboardingRoute
+  ProfileRoute: typeof ProfileRoute
   QuestsRoute: typeof QuestsRoute
   StatsRoute: typeof StatsRoute
 }
@@ -110,6 +135,13 @@ declare module '@tanstack/react-router' {
       path: '/quests'
       fullPath: '/quests'
       preLoaderRoute: typeof QuestsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/onboarding': {
@@ -148,6 +180,7 @@ const rootRouteChildren: RootRouteChildren = {
   CheckinRoute: CheckinRoute,
   HomeRoute: HomeRoute,
   OnboardingRoute: OnboardingRoute,
+  ProfileRoute: ProfileRoute,
   QuestsRoute: QuestsRoute,
   StatsRoute: StatsRoute,
 }
