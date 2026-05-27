@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as StatsRouteImport } from './routes/stats'
+import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as RegisterRouteImport } from './routes/register'
 import { Route as QuestsRouteImport } from './routes/quests'
 import { Route as ProfileRouteImport } from './routes/profile'
@@ -24,6 +25,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const StatsRoute = StatsRouteImport.update({
   id: '/stats',
   path: '/stats',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RegisterRoute = RegisterRouteImport.update({
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/profile': typeof ProfileRoute
   '/quests': typeof QuestsRoute
   '/register': typeof RegisterRoute
+  '/settings': typeof SettingsRoute
   '/stats': typeof StatsRoute
 }
 export interface FileRoutesByTo {
@@ -101,6 +108,7 @@ export interface FileRoutesByTo {
   '/profile': typeof ProfileRoute
   '/quests': typeof QuestsRoute
   '/register': typeof RegisterRoute
+  '/settings': typeof SettingsRoute
   '/stats': typeof StatsRoute
 }
 export interface FileRoutesById {
@@ -115,6 +123,7 @@ export interface FileRoutesById {
   '/profile': typeof ProfileRoute
   '/quests': typeof QuestsRoute
   '/register': typeof RegisterRoute
+  '/settings': typeof SettingsRoute
   '/stats': typeof StatsRoute
 }
 export interface FileRouteTypes {
@@ -130,6 +139,7 @@ export interface FileRouteTypes {
     | '/profile'
     | '/quests'
     | '/register'
+    | '/settings'
     | '/stats'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -143,6 +153,7 @@ export interface FileRouteTypes {
     | '/profile'
     | '/quests'
     | '/register'
+    | '/settings'
     | '/stats'
   id:
     | '__root__'
@@ -156,6 +167,7 @@ export interface FileRouteTypes {
     | '/profile'
     | '/quests'
     | '/register'
+    | '/settings'
     | '/stats'
   fileRoutesById: FileRoutesById
 }
@@ -170,6 +182,7 @@ export interface RootRouteChildren {
   ProfileRoute: typeof ProfileRoute
   QuestsRoute: typeof QuestsRoute
   RegisterRoute: typeof RegisterRoute
+  SettingsRoute: typeof SettingsRoute
   StatsRoute: typeof StatsRoute
 }
 
@@ -180,6 +193,13 @@ declare module '@tanstack/react-router' {
       path: '/stats'
       fullPath: '/stats'
       preLoaderRoute: typeof StatsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/register': {
@@ -266,6 +286,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProfileRoute: ProfileRoute,
   QuestsRoute: QuestsRoute,
   RegisterRoute: RegisterRoute,
+  SettingsRoute: SettingsRoute,
   StatsRoute: StatsRoute,
 }
 export const routeTree = rootRouteImport
