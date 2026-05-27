@@ -1,5 +1,5 @@
 import {
-  Droplets, Pill, Apple, ShowerHead, Sparkles, Stretch,
+  Droplets, Pill, Apple, ShowerHead, Sparkles, PersonStanding,
   BookHeart, Heart, Wind, Brain, Smile, ListChecks,
   Footprints, Dumbbell, Sun, TreePine, Flower2,
   MessageCircle, Phone, Users, Gift,
@@ -46,7 +46,7 @@ export const QUEST_POOL: Quest[] = [
   { id: "sc-meal",   name: "Nourish the body",     description: "Eat one healthy meal mindfully.",     category: "self-care", difficulty: "medium", hp: 10, xp: 18, minutes: 20, icon: Apple,      tint: "var(--mint)" },
   { id: "sc-shower", name: "Cleansing waters",     description: "Take a warm shower.",                 category: "self-care", difficulty: "easy",   hp: 7,  xp: 10, minutes: 10, icon: ShowerHead, tint: "var(--sky)" },
   { id: "sc-clean",  name: "Tidy your sanctuary",  description: "Clear and organize your workspace.",  category: "self-care", difficulty: "medium", hp: 9,  xp: 16, minutes: 10, icon: Sparkles,   tint: "var(--peach)" },
-  { id: "sc-stretch",name: "Loosen the limbs",     description: "Stretch your body for 5 minutes.",    category: "self-care", difficulty: "easy",   hp: 6,  xp: 10, minutes: 5,  icon: Stretch,    tint: "var(--mint)" },
+  { id: "sc-stretch",name: "Loosen the limbs",     description: "Stretch your body for 5 minutes.",    category: "self-care", difficulty: "easy",   hp: 6,  xp: 10, minutes: 5,  icon: PersonStanding, tint: "var(--mint)" },
 
   // MENTAL WELLNESS
   { id: "mn-journal", name: "Heart pages",        description: "Journal one feeling today.",          category: "mental", difficulty: "easy",   hp: 10, xp: 15, minutes: 5,  icon: BookHeart, tint: "var(--lavender)" },
