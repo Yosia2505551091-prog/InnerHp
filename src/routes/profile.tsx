@@ -6,7 +6,7 @@ import { useHP, MODE_META } from "@/lib/hp-context";
 import { AVATARS, CATEGORY_LABEL, avatarById, avatarUnlocked, AvatarCategory } from "@/lib/avatars";
 import { BADGES, BADGE_CATEGORY_LABEL, BadgeCategory, badgeStatus } from "@/lib/badges";
 import { titleForLevel, xpProgress, nextMilestone } from "@/lib/levels";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState, useEffect } from "react";
 
 export const Route = createFileRoute("/profile")({
   component: Profile,
