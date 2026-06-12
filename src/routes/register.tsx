@@ -21,15 +21,19 @@ function Register() {
       <form onSubmit={(e) => { e.preventDefault(); nav({ to: "/onboarding" }); }} className="mt-8 space-y-3">
         <label className="glass-soft flex items-center gap-3 rounded-2xl px-4 py-3">
           <UserIcon className="h-4 w-4 text-muted-foreground" />
-          <input required placeholder="Hero name" className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground/70" />
+          <input required defaultValue="Aelwyn" placeholder="Hero name" className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground/70" />
         </label>
         <label className="glass-soft flex items-center gap-3 rounded-2xl px-4 py-3">
           <Mail className="h-4 w-4 text-muted-foreground" />
-          <input type="email" required placeholder="you@realm.com" className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground/70" />
+          <input type="email" required defaultValue="aelwyn@innerhp.com" placeholder="you@realm.com" className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground/70" />
         </label>
         <label className="glass-soft flex items-center gap-3 rounded-2xl px-4 py-3">
           <Lock className="h-4 w-4 text-muted-foreground" />
-          <input type="password" required placeholder="Create a passphrase" className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground/70" />
+          <input type="password" required defaultValue="starlight99" placeholder="Create a passphrase" className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground/70" />
+        </label>
+        <label className="glass-soft flex items-center gap-3 rounded-2xl px-4 py-3">
+          <Lock className="h-4 w-4 text-muted-foreground" />
+          <input type="password" required defaultValue="starlight99" placeholder="Confirm passphrase" className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground/70" />
         </label>
         <button type="submit" className="gradient-primary mt-2 w-full rounded-full py-3.5 font-display text-base font-semibold shadow-lg active:scale-[0.98]">
           Forge my hero

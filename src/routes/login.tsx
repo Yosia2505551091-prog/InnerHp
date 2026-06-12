@@ -25,11 +25,11 @@ function Login() {
       <form onSubmit={(e) => { e.preventDefault(); nav({ to: "/home" }); }} className="mt-8 space-y-3">
         <label className="glass-soft flex items-center gap-3 rounded-2xl px-4 py-3">
           <Mail className="h-4 w-4 text-muted-foreground" />
-          <input type="email" required placeholder="you@realm.com" className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground/70" />
+          <input type="email" required defaultValue="adventurer@innerhp.com" placeholder="you@realm.com" className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground/70" />
         </label>
         <label className="glass-soft flex items-center gap-3 rounded-2xl px-4 py-3">
           <Lock className="h-4 w-4 text-muted-foreground" />
-          <input type={show ? "text" : "password"} required placeholder="••••••••" className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground/70" />
+          <input type={show ? "text" : "password"} required defaultValue="password123" placeholder="••••••••" className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground/70" />
           <button type="button" onClick={() => setShow((s) => !s)} className="text-muted-foreground">
             {show ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
           </button>
@@ -51,10 +51,10 @@ function Login() {
       </div>
 
       <div className="space-y-2">
-        <button className="glass flex w-full items-center justify-center gap-2 rounded-full py-3 text-sm font-semibold">
+        <button onClick={() => nav({ to: "/home" })} className="glass flex w-full items-center justify-center gap-2 rounded-full py-3 text-sm font-semibold">
           <span className="text-lg">🔮</span> Continue with Google
         </button>
-        <button className="glass flex w-full items-center justify-center gap-2 rounded-full py-3 text-sm font-semibold">
+        <button onClick={() => nav({ to: "/home" })} className="glass flex w-full items-center justify-center gap-2 rounded-full py-3 text-sm font-semibold">
           <span className="text-lg">📜</span> Continue with Facebook
         </button>
       </div>

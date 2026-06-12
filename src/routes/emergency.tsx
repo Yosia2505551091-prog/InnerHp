@@ -26,7 +26,7 @@ function Emergency() {
     <div className="relative min-h-screen overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[oklch(0.22_0.05_270)] via-[oklch(0.28_0.06_280)] to-[oklch(0.18_0.05_260)]" />
       <div className="absolute inset-0 -z-10 opacity-30" style={{ background: "radial-gradient(600px 400px at 50% 30%, var(--lavender), transparent 70%)" }} />
-      <div className="mx-auto flex min-h-screen w-full max-w-[440px] flex-col px-6 py-8 text-white">
+      <div className="mx-auto flex min-h-screen w-full max-w-[480px] flex-col px-8 py-14 text-white">
         <div className="flex items-center justify-between">
           <Link to="/home" className="grid h-10 w-10 place-items-center rounded-full bg-white/10 backdrop-blur">
             <ArrowLeft className="h-4 w-4" />
@@ -35,12 +35,12 @@ function Emergency() {
           <div className="w-10" />
         </div>
 
-        <div className="mt-2 text-center">
+        <div className="mt-8 text-center">
           <p className="text-xs text-white/60">Your HP feels low.</p>
-          <h1 className="mt-1 font-display text-2xl font-bold leading-tight">You're safe here. <br />Let's slow down together.</h1>
+          <h1 className="mt-2 font-display text-3xl font-bold leading-snug">You're safe here.<br />Let's slow down together.</h1>
         </div>
 
-        <div className="my-8 grid flex-1 place-items-center">
+        <div className="my-14 grid flex-1 place-items-center">
           <div className="relative grid place-items-center">
             <div
               className="absolute rounded-full bg-white/10 backdrop-blur transition-all duration-[4000ms] ease-in-out"
@@ -65,24 +65,27 @@ function Emergency() {
           </div>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-4">
           {[
-            { i: Wind, l: "Continue breathing (2 min)" },
-            { i: BookHeart, l: "Write down what you feel" },
-            { i: Music, l: "Play soft rain sounds" },
-            { i: Phone, l: "Talk to someone who cares" },
-          ].map(({ i: Ic, l }, k) => (
-            <button key={k} className="flex w-full items-center gap-3 rounded-2xl border border-white/15 bg-white/10 px-4 py-3.5 text-left backdrop-blur transition-all hover:bg-white/20">
-              <div className="grid h-9 w-9 place-items-center rounded-full bg-white/15">
-                <Ic className="h-4 w-4" />
+            { i: Wind, l: "Continue breathing (2 min)", d: "Follow a gentle guided rhythm to settle your breath." },
+            { i: BookHeart, l: "Write down what you feel", d: "Let your thoughts drift onto the page without judgment." },
+            { i: Music, l: "Play soft rain sounds", d: "Wrap yourself in a cozy blanket of ambient sound." },
+            { i: Phone, l: "Talk to someone who cares", d: "A kind voice can carry you through the storm." },
+          ].map(({ i: Ic, l, d }, k) => (
+            <button key={k} className="flex w-full flex-col gap-1 rounded-2xl border border-white/15 bg-white/10 px-5 py-5 text-left backdrop-blur transition-all hover:bg-white/20">
+              <div className="flex items-center gap-4">
+                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white/15">
+                  <Ic className="h-4 w-4" />
+                </div>
+                <span className="flex-1 text-sm font-medium leading-snug">{l}</span>
               </div>
-              <span className="flex-1 text-sm font-medium">{l}</span>
+              <p className="pl-14 text-xs text-white/50">{d}</p>
             </button>
           ))}
         </div>
 
-        <p className="mt-5 text-center text-[11px] text-white/50">
-          You don't have to fix anything right now. <br />Just be here. That's enough.
+        <p className="mt-10 text-center text-sm leading-relaxed text-white/50">
+          You don't have to fix anything right now.<br />Just be here. That's enough.
         </p>
       </div>
     </div>
