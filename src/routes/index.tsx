@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import logo from "@/assets/innerhp-logo.png";
+import logoAsset from "@/assets/innerhp-logo.png.asset.json";
 import { Sparkles, Heart } from "lucide-react";
 import { MagicParticles } from "@/components/MagicParticles";
 
@@ -15,20 +15,24 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="relative mx-auto flex min-h-screen w-full max-w-[440px] flex-col items-center justify-between px-6 py-12">
+    <div className="relative mx-auto flex min-h-screen w-full max-w-[440px] flex-col items-center justify-between px-6 py-10">
       <MagicParticles />
-      <div className="flex flex-1 flex-col items-center justify-center text-center">
-        <div className="relative">
-          <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-br from-[var(--lavender)] to-[var(--mint)] blur-3xl opacity-70" />
-          <img src={logo} alt="InnerHP — heart crystal logo" width={768} height={768} className="animate-float h-60 w-60 object-contain drop-shadow-2xl" />
+      <div className="flex flex-1 flex-col items-center justify-center gap-4 text-center">
+        <div className="relative grid place-items-center">
+          <div className="absolute inset-6 -z-10 rounded-full bg-gradient-to-br from-[var(--lavender)] to-[var(--mint)] blur-3xl opacity-60" />
+          <img
+            src={logoAsset.url}
+            alt="InnerHP — heart and spellbook logo"
+            className="animate-float h-44 w-44 object-contain drop-shadow-2xl sm:h-56 sm:w-56"
+          />
         </div>
-        <div className="mt-2 inline-flex items-center gap-1.5 rounded-full glass px-3 py-1 text-xs font-medium text-muted-foreground">
+        <div className="inline-flex items-center gap-1.5 rounded-full glass px-3 py-1 text-xs font-medium text-muted-foreground">
           <Sparkles className="h-3.5 w-3.5" /> A cozy RPG for your mind
         </div>
-        <h1 className="mt-4 font-display text-5xl font-bold tracking-tight">
+        <h1 className="font-display text-5xl font-bold tracking-tight">
           Inner<span className="text-gradient">HP</span>
         </h1>
-        <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
+        <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
           A gentle RPG where your feelings have power. Care for yourself, complete quests, and restore your Mental HP.
         </p>
       </div>

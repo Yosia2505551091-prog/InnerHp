@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Mail, ArrowLeft, MailCheck } from "lucide-react";
-import logo from "@/assets/innerhp-logo.png";
+import logoAsset from "@/assets/innerhp-logo.png.asset.json";
 import { MagicParticles } from "@/components/MagicParticles";
 
 export const Route = createFileRoute("/forgot")({
@@ -18,7 +18,7 @@ function Forgot() {
         <ArrowLeft className="h-3.5 w-3.5" /> Back
       </Link>
       <div className="mt-6 text-center">
-        <img src={logo} alt="InnerHP" width={768} height={768} className="mx-auto h-20 w-20 object-contain" />
+        <img src={logoAsset.url} alt="InnerHP" className="mx-auto h-24 w-24 object-contain" />
         <h1 className="mt-3 font-display text-2xl font-bold">Lost your spellbook?</h1>
         <p className="mt-1 text-sm text-muted-foreground">We'll send a magic link to recover it.</p>
       </div>
