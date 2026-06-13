@@ -30,7 +30,7 @@ function Index() {
           <Sparkles className="h-3.5 w-3.5" /> A cozy RPG for your mind
         </div>
         <h1 className="font-display text-5xl font-bold tracking-tight">
-          Inner<span className="text-gradient">HP</span>
+          Inner<span className="bg-gradient-to-br from-[var(--primary)] to-[oklch(0.62_0.18_295)] bg-clip-text text-transparent">HP</span>
         </h1>
         <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
           A gentle RPG where your feelings have power. Care for yourself, complete quests, and restore your Mental HP.
