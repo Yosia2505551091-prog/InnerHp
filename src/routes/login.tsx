@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import logoAsset from "@/assets/innerhp-logo.png.asset.json";
+import logoPng from "@/assets/innerhp-logo.png";
 import { MagicParticles } from "@/components/MagicParticles";
 
 export const Route = createFileRoute("/login")({
@@ -20,7 +20,7 @@ function Login() {
       {/* Logo & heading — same as original */}
       <div className="text-center">
         <img
-          src={logoAsset.url}
+          src={logoPng}
           alt="InnerHP"
           className="mx-auto h-28 w-28 object-contain drop-shadow-xl"
         />
