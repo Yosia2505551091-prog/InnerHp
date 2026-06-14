@@ -20,8 +20,8 @@ function Index() {
       <div className="flex flex-1 flex-col items-center justify-center gap-4 text-center">
         <div className="relative grid place-items-center">
           <div className="absolute inset-6 -z-10 rounded-full bg-gradient-to-br from-[var(--lavender)] to-[var(--mint)] blur-3xl opacity-60" />
-          <img
-            src={logoAsset.url}
+          <img 
+            src="/innerhp-logo.png"
             alt="InnerHP — heart and spellbook logo"
             className="animate-float h-44 w-44 object-contain drop-shadow-2xl sm:h-56 sm:w-56"
           />
