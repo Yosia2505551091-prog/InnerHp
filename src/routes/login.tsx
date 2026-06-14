@@ -1,21 +1,28 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import logoAsset from "@/assets/innerhp-logo.png.asset.json";
+import { MagicParticles } from "@/components/MagicParticles";
 
 export const Route = createFileRoute("/login")({
   component: Login,
-  head: () => ({ meta: [{ title: "Sign in — InnerHP" }] }),
 });
 
 function Login() {
   return (
-    <div className="relative mx-auto flex min-h-screen w-full max-w-[440px] flex-col px-6 py-10">
-      <div className="text-center">
-        <img src={logoAsset.url} alt="InnerHP" className="mx-auto h-28 w-28 object-contain drop-shadow-xl" />
-        <h1 className="mt-3 font-display text-3xl font-bold">Welcome back, hero</h1>
-      </div>
-      <Link to="/home" className="gradient-primary mt-8 w-full rounded-full py-3.5 font-display text-base font-semibold text-center">
-        Enter the realm
+    <div style={{ padding: 50, textAlign: "center" }}>
+      <MagicParticles />
+      <img src={logoAsset.url} alt="InnerHP" style={{ height: 100 }} />
+      <h1>Welcome back, hero</h1>
+      <Link to="/home">
+        <button style={{ fontSize: 20, padding: "10px 20px" }}>
+          Enter the realm
+        </button>
       </Link>
+      <div>
+        <Link to="/forgot">Forgot password?</Link>
+      </div>
+      <div>
+        <Link to="/register">Create an account</Link>
+      </div>
     </div>
   );
 }
