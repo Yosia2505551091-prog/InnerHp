@@ -14,6 +14,9 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+
+  const logoUrl = logoAsset.url;
+  
   return (
     <div className="relative mx-auto flex min-h-screen w-full max-w-[440px] flex-col items-center justify-between px-6 py-10">
       <MagicParticles />
@@ -21,7 +24,7 @@ function Index() {
         <div className="relative grid place-items-center">
           <div className="absolute inset-6 -z-10 rounded-full bg-gradient-to-br from-[var(--lavender)] to-[var(--mint)] blur-3xl opacity-60" />
           <img 
-            src="/innerhp-logo.png"
+            src={logoUrl}
             alt="InnerHP — heart and spellbook logo"
             className="animate-float h-44 w-44 object-contain drop-shadow-2xl sm:h-56 sm:w-56"
           />
