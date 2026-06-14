@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import logoAsset from "@/assets/innerhp-logo.png.asset.json";
+import logoPng from "@/assets/innerhp-logo.png";
 import { Sparkles, Heart } from "lucide-react";
 import { MagicParticles } from "@/components/MagicParticles";
 
@@ -22,10 +22,10 @@ function Index() {
         <div className="relative grid place-items-center">
           <div className="absolute inset-6 -z-10 rounded-full bg-gradient-to-br from-[var(--lavender)] to-[var(--mint)] blur-3xl opacity-60" />
           <img 
-            <img src="/innerhp-logo.png">
-            alt="InnerHP — heart and spellbook logo"
-            className="animate-float h-44 w-44 object-contain drop-shadow-2xl sm:h-56 sm:w-56"
-          />
+  src={logoPng}
+  alt="InnerHP — heart and spellbook logo"
+  className="animate-float h-44 w-44 object-contain drop-shadow-2xl sm:h-56 sm:w-56"
+/>
         </div>
         <div className="inline-flex items-center gap-1.5 rounded-full glass px-3 py-1 text-xs font-medium text-muted-foreground">
           <Sparkles className="h-3.5 w-3.5" /> A cozy RPG for your mind
