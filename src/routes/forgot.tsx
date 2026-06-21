@@ -27,10 +27,10 @@ function Forgot() {
           className="mx-auto h-24 w-24 object-contain"
         />
         <h1 className="mt-3 font-display text-2xl font-bold">
-          Lost your spellbook?
+          Lost your password?
         </h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          We’ll send a magic link to recover it.
+          We’ll send a link to recover it.
         </p>
       </div>
 
